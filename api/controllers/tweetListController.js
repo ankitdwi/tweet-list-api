@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-  Tweet = mongoose.model('Tweets');
+  Tweet = mongoose.model('Tweet');
 
 exports.list_all_tweets = function(req, res) {
     Tweet.find({}, function(err, tweet) {
