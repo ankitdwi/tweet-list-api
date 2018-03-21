@@ -9,14 +9,7 @@ var uristring =   process.env.MONGOLAB_URI || 'mongodb://localhost/Tweetdb';
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 //Mongodb connect
-mongoose.connect(uristring, function (err, res) {
-  if (err) {
-    console.log('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-    console.log('Succeeded connected to: ' + uristring);
-  }
-});
-
+mongoose.connect(uristring);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -24,6 +17,10 @@ app.use(bodyParser.json());
 
 var routes = require('./api/routes/tweetListRoutes'); //importing route
 routes(app); //register the route
+
+app.use(function(req, res) {
+  res.status(404).send({url: req.originalUrl + ' not found'})
+});
 
 
 app.listen(port);
