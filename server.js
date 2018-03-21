@@ -4,7 +4,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Tweet = require('./api/models/tweetListModel'), //created model loading here
   bodyParser = require('body-parser');
-var uristring =   process.env.MONGOLAB_URI || 'mongodb://localhost/Tweetdb';
+var uristring =   process.env.MONGODB_URI || 'mongodb://localhost/Tweetdb';
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
