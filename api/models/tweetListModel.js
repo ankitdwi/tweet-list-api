@@ -6,11 +6,11 @@ var Schema = mongoose.Schema;
 var TweetSchema = new Schema({
   name: {
     type: String,
-    default: NA
+    default: "NA"
   },
   email: {
     type: String,
-    default: NA
+    default: "NA"
   },
   img: {
     type: String,
@@ -18,7 +18,7 @@ var TweetSchema = new Schema({
   },
   desc: {
     type: String,
-    default: NA
+    default: "NA"
   },
 });
 
